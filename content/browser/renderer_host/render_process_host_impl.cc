@@ -2107,6 +2107,7 @@ void RenderProcessHostImpl::FilterURL(RenderProcessHost* rph,
       rph->IsForGuestsOnly() &&
       !(url->is_valid() && policy->IsWebSafeScheme(url->scheme()));
 
+  VLOG(1) << "non_web_url_in_guest: " << non_web_url_in_guest;
   if (non_web_url_in_guest || !policy->CanRequestURL(rph->GetID(), *url)) {
     // If this renderer is not permitted to request this URL, we invalidate the
     // URL.  This prevents us from storing the blocked URL and becoming confused
