@@ -2114,6 +2114,8 @@ void RenderProcessHostImpl::FilterURL(RenderProcessHost* rph,
     // later.
     if (non_web_url_in_guest && nw::RphGuestFilterURLHook(rph, url))
       return;
+    if (base::LowerCaseEqualsASCII(url->spec(), url::kAboutBlankURL))
+      return;
     VLOG(1) << "Blocked URL " << url->spec();
     *url = GURL(url::kAboutBlankURL);
   }
