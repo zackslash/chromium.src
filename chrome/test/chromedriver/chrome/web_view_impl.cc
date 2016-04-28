@@ -266,7 +266,11 @@ Status WebViewImpl::CallFunction(const std::string& frame,
   std::string json;
   base::JSONWriter::Write(args, &json);
   // TODO(zachconrad): Second null should be array of shadow host ids.
-  std::string expression = base::StringPrintf(
+  std::string expression;
+  if (base::StartsWith(function.c_str(), "rawscript:", base::CompareCase::SENSITIVE))
+    expression = function.substr(10);
+  else
+    expression = base::StringPrintf(
       "(%s).apply(null, [null, %s, %s])",
       kCallFunctionScript,
       function.c_str(),

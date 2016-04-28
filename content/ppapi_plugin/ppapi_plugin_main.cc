@@ -132,7 +132,7 @@ int PpapiPluginMain(const MainFunctionParams& parameters) {
 #endif
 
 #if defined(OS_LINUX)
-  LinuxSandbox::InitializeSandbox();
+  //LinuxSandbox::InitializeSandbox();
 #endif
 
   scoped_ptr<base::FeatureList> feature_list(new base::FeatureList);
