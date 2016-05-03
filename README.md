@@ -8,7 +8,8 @@ Forked with intent to slim down distribution size by removing functionality
 
 Put the following in ‘.gclient’
 
-```solutions = [
+```json
+solutions = [
   {
     "name"        : "src",
     "url"         : "https://github.com/zackslash/chromium.src.git@origin/slim”,
@@ -25,7 +26,8 @@ Put the following in ‘.gclient’
     },
     "safesync_url": "",
   }
-]```
+]
+```
 
 - Clone [V8](https://github.com/zackslash/v8) into /chromium/src/v8
 - Clone [nw](https://github.com/zackslash/nw.js) into /chromium/src/content/nw
