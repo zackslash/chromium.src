@@ -4,7 +4,7 @@ Forked with intent to slim down distribution size by removing functionality
 
 # Building
 
-- git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+- git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git and add it to your path
 
 Put the following in ‘.gclient’
 
